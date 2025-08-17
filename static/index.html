@@ -15,6 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6840529569014734"
     crossorigin="anonymous"></script>
+  <!-- Firebase CDN scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 </head>
 <body class="center">
   <div class="f-nav"></div>
@@ -54,7 +57,7 @@
     </div>
   </div>
 
-  <!-- Admin Panel Popup -->
+  <!-- Modern Admin Panel Popup -->
   <div id="admin-panel" class="admin-panel" style="display:none;">
     <div class="admin-panel-content">
       <div class="admin-panel-header">
@@ -62,11 +65,16 @@
         <button id="close-admin-btn" class="close-btn">✕</button>
       </div>
       <div id="admin-users-list"></div>
-      <div id="user-action-panel" style="display:none;">
-        <input type="text" id="block-message-input" placeholder="Block message" />
-        <button id="block-unblock-btn"></button>
+      <div class="troll-section">
+        <label>Send troll message to user:</label>
+        <div class="troll-row">
+          <input type="text" id="troll-user-input" placeholder="Name" />
+          <input type="text" id="troll-message-input" placeholder="Troll message" />
+          <button id="send-troll-btn" class="block-btn">Send</button>
+        </div>
       </div>
       <div id="admin-panel-log" style="margin-top:10px;font-size:14px;text-align:center;"></div>
+      <div id="admin-powers-section" style="margin-top:18px;"></div>
     </div>
   </div>
 
