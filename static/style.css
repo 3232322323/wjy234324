@@ -219,14 +219,21 @@ body {
   margin: 12px 0;
 }
 
-/* User Action Panel */
-#user-action-panel {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+/* Troll section */
+.troll-section label {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
 }
-#block-message-input {
+.troll-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+#troll-user-input,
+#troll-message-input {
   flex: 1;
   padding: 8px 12px;
   border-radius: 8px;
@@ -237,29 +244,48 @@ body {
   outline: none;
   box-shadow: 0 0 0 2px #222c38;
 }
-#block-unblock-btn {
-  padding: 7px 18px;
-  border-radius: 8px;
-  border: none;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: bold;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-#block-unblock-btn.block-btn {
+#send-troll-btn {
   background: #ff2222;
   color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 18px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-#block-unblock-btn.block-btn:hover {
+#send-troll-btn:hover {
   background: #b30000;
 }
-#block-unblock-btn.unblock-btn {
-  background: #16243a;
-  color: #bdf6ff;
-  border: 2px solid #33eaff;
+
+/* Admin Powers Section */
+#admin-powers-section h3 {
+  color: #ff2222;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
-#block-unblock-btn.unblock-btn:hover {
+#admin-powers-section button {
+  margin-left: 10px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #ff2222;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+#admin-powers-section button.restore {
+  background: #33eaff;
+}
+#admin-powers-section button:hover {
+  background: #b30000;
+}
+#admin-powers-section button.restore:hover {
   background: #222c38;
   color: #33eaff;
 }
@@ -273,4 +299,10 @@ body {
     min-width: 90vw;
     padding: 24px 8vw 18px 8vw;
   }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
 }
