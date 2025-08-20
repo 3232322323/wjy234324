@@ -36,39 +36,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-<!-- Your existing HTML content -->
-
-<!-- VOID-style ad scrubber -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const adSelectors = [
-      '[id*="ad"]',
-      '[class*="ad"]',
-      '[src*="ads"]',
-      '[href*="ads"]',
-      'iframe[src*="doubleclick"]',
-      'script[src*="googlesyndication"]',
-      'div[class*="sponsor"]',
-      'img[src*="promo"]'
-    ];
-
-    adSelectors.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => {
-        el.remove();
-      });
-    });
-
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(m => {
-        m.addedNodes.forEach(node => {
-          if (node.nodeType === 1 && adSelectors.some(sel => node.matches(sel))) {
-            node.remove();
-          }
-        });
-      });
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-  });
-</script>
-</body>
